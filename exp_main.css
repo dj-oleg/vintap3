@@ -1,0 +1,48 @@
+.play-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+
+
+/* Общие стили для play-overlay */
+.play-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: opacity 0.3s ease;
+  opacity: 0;
+  z-index: 10; /* Чтобы кнопка была выше */
+}
+
+/* Кнопка появляется при наведении */
+.group:hover .play-overlay {
+  opacity: 1;
+}
+
+/* Убеждаемся, что изображение не меняет размер */
+.relative {
+  position: relative;
+}
+
+/* Исправления для маленьких экранов */
+@media (max-width: 767px) {
+  .play-overlay {
+    position: absolute; /* Убедитесь, что слой остается в границах родителя */
+    width: 100%; /* Растягивается по ширине родителя */
+    height: 100%; /* Растягивается по высоте родителя */
+  }
+}
+
+
+/* .hidden {
+  display: none;
+} */
